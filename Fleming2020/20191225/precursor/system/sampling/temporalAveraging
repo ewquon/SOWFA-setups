@@ -35,5 +35,14 @@
                   base              time;
                   window            600.0;
               }
+
+              p_rgh
+              {
+                  mean              on;
+                  prime2Mean        off;
+                  primeUPrimeMean   off;
+                  base              time;
+                  window            600.0;
+              }
           );
       }
