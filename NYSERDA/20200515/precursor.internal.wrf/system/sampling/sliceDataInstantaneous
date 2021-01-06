@@ -1,0 +1,73 @@
+        sliceDataInstantaneous
+        {
+            type                 surfaces;
+            functionObjectLibs   ("libsampling.so");
+            enabled              true;
+            interpolationScheme  cell;
+            writeControl        adjustableRunTime;
+            writeInterval        60;
+            surfaceFormat        vtk;
+            fields
+            (
+                U
+                T
+            );
+            surfaces
+            (
+                slice_horizontal_40m
+                {
+                    type         plane;
+                    planeType    pointAndNormal;
+                    pointAndNormalDict
+                    {
+                        point   (1500.01 1500.01 40.01);
+                        normal  (0 0 1);
+                    };
+                    triangulate  false;
+                }
+                slice_horizontal_80m
+                {
+                    type         plane;
+                    planeType    pointAndNormal;
+                    pointAndNormalDict
+                    {
+                        point   (1500.01 1500.01 80.01);
+                        normal  (0 0 1);
+                    };
+                    triangulate  false;
+                }
+                slice_horizontal_150m
+                {
+                    type         plane;
+                    planeType    pointAndNormal;
+                    pointAndNormalDict
+                    {
+                        point   (1500.01 1500.01 150.01);
+                        normal  (0 0 1);
+                    };
+                    triangulate  false;
+                }
+                slice_aligned_220deg
+                {
+                    type         plane;
+                    planeType    pointAndNormal;
+                    pointAndNormalDict
+                    {
+                        point   (1500.01 1500.01 80.01);
+                        normal  (-0.7660444431189779 0.6427876096865395 0);
+                    };
+                    triangulate  false;
+                }
+                slice_crossstream_220deg
+                {
+                    type         plane;
+                    planeType    pointAndNormal;
+                    pointAndNormalDict
+                    {
+                        point   (1500.01 1500.01 80.01);
+                        normal  (0.6427876096865395  0.7660444431189779 0);
+                    };
+                    triangulate  false;
+                }
+            );
+        }
