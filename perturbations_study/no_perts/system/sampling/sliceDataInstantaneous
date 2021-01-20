@@ -1,0 +1,73 @@
+        sliceDataInstantaneous
+        {
+            type                 surfaces;
+            functionObjectLibs   ("libsampling.so");
+            enabled              true;
+            interpolationScheme  cell;
+            writeControl         adjustableRunTime;
+            writeInterval        60;
+            surfaceFormat        vtk;
+            fields
+            (
+                U
+                T
+            );
+            surfaces
+            (
+                slice_horizontal_24m
+                {
+                    type         plane;
+                    planeType    pointAndNormal;
+                    pointAndNormalDict
+                    {
+                        point   (5766 2886 24.49);
+                        normal  (0 0 1);
+                    };
+                    triangulate  false;
+                }
+                slice_horizontal_53m
+                {
+                    type         plane;
+                    planeType    pointAndNormal;
+                    pointAndNormalDict
+                    {
+                        point   (5766 2886 53.15);
+                        normal  (0 0 1);
+                    };
+                    triangulate  false;
+                }
+                slice_horizontal_90m
+                {
+                    type         plane;
+                    planeType    pointAndNormal;
+                    pointAndNormalDict
+                    {
+                        point   (5766 2886 89.67);
+                        normal  (0 0 1);
+                    };
+                    triangulate  false;
+                }
+                slice_horizontal_271m
+                {
+                    type         plane;
+                    planeType    pointAndNormal;
+                    pointAndNormalDict
+                    {
+                        point   (5766 2886 270.94);
+                        normal  (0 0 1);
+                    };
+                    triangulate  false;
+                }
+                slice_horizontal_482m
+                {
+                    type         plane;
+                    planeType    pointAndNormal;
+                    pointAndNormalDict
+                    {
+                        point   (5766 2886 482.43);
+                        normal  (0 0 1);
+                    };
+                    triangulate  false;
+                }
+            );
+        }

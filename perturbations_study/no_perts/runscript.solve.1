@@ -1,0 +1,31 @@
+#!/bin/bash
+#SBATCH --nodes=43
+#SBATCH --ntasks=1548
+#SBATCH --time=47:59:00
+#SBATCH --job-name=CBL_18Z_no_perts
+#SBATCH --account=mmc
+#SBATCH --mail-user=eliot.quon@nrel.gov
+#SBATCH --mail-type=ALL
+
+source $HOME/.bash_profile
+
+cores=1548
+
+solver=superDeliciousVanilla
+runNumber=1
+startTime=0
+
+
+OpenFOAM-6-intel-openfast-sp
+
+echo "Starting OpenFOAM job at: " $(date)
+echo "using " $cores " cores"
+echo "with modules:"
+module list
+
+cp system/controlDict.$runNumber system/controlDict
+
+# Run the solver (parallel)
+srun -n $cores --cpu_bind=cores $solver -parallel > log.$runNumber.$solver 2>&1
+
+echo "Ending OpenFOAM job at: " $(date)
