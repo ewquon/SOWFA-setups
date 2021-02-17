@@ -1,0 +1,11 @@
+    calcTurbulenceFields
+    {
+        type    turbulenceFields;
+        libs    ("libfieldFunctionObjects.so");
+        fields
+        (
+            R
+            //devReff
+            //divDevReff
+        );
+    }
