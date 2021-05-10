@@ -2,7 +2,8 @@
 
 
 # User Input.
-OpenFOAMversion=6-intel-openfast-sp   # OpenFOAM version
+#OpenFOAMversion=6-intel-openfast-sp   # OpenFOAM version
+OpenFOAMversion=6-gnu-openfast-sp   # OpenFOAM version
 startTime=0                     # Start time
 updateBCType=0                  # Boolean for whether or not the boundary condition types will be updated over 
                                 #    what is in the initial conditions files. Leave it 0 for precursors
@@ -81,6 +82,10 @@ fi
 
 # Do serial local refinement
 refineMeshSerial $refinementLevels
+
+# Renumber the mesh.
+echo "   -Renumbering the mesh with renumberMesh..."
+renumberMesh -overwrite > log.renumberMesh 2>&1
 
 # Decompose the mesh and solution files (serial)
 echo "   -Decomposing the domain with decomposePar..."
