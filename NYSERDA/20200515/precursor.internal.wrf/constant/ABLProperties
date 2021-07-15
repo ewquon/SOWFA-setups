@@ -35,17 +35,18 @@ momentumSource
 
     gain        0.2;
     setVerticalCompZero true;
-    regSmoothing        true;
-    regOrder    3;
-    alpha       1.0;
-    timeWindow  1800.0;
-    writeError  false;
-    weightsTable
-    (
-        (0.0    1.0)
-        (1000.0 1.0)
-        (4000.0 1.0)
-    );
+    regSmoothing        false;
+//  regSmoothing        true;
+//  regOrder    3;
+//  alpha       1.0;
+//  timeWindow  1800.0;
+//  writeError  false;
+//  weightsTable
+//  (
+//      (0.0    1.0)
+//      (1000.0 1.0)
+//      (4000.0 1.0)
+//  );
 }
 
 temperatureSource
@@ -62,9 +63,14 @@ temperatureSource
     weightsTable
     (
         (0.0    1.0)
-        (1000.0 1.0)
-        (4000.0 1.0)
+        (250.0  1.0)
+        (350.0  0.0)
+        (4000.0 0.0)
     );
+
+    blendToConst    true;
+    assimMaxHeight  250;
+    blendThickness  100;
 }
 
 
